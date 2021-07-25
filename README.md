@@ -10,6 +10,8 @@
 
 ##### [三、数组array](#数组array)
 
+##### [四、指针point](#point)
+
 ## <span id="day1">一、day1</span>
 > 1,GCC编译器
 > 
@@ -21,13 +23,13 @@
 > 
 > 5, 输入、输出专题
 
+## <span id="Process_Control">二、Process Control</span>
 
- ## <span id="Process_Control">二、Process Control</span>
 > 流程控制
 > 
 > `if else` `switch-case` `whlie`  	`do-while`  `for` `if-goto` `break	continue`  
 
-  ## <span id="数组array">三、数组array</span>
+## <span id="数组array">三、数组array</span>
 
 ### 一维数组
 
@@ -52,6 +54,7 @@
 > 深入理解二维数组
 
 ### 字符数组
+
 > 定义，初始化，存储特点
 > 
 > 输入输出
@@ -59,3 +62,14 @@
 > 常用函数
 > 
 
+## <span id="point">四、point</span>
+
+> 变量与地址 指针与变量指针 指针访问	空指针 野指针
+>
+> 空类型 定义 初始化	
+>
+> 指针运算
+>
+> 指针与数组  const与指针	指针数组与数组指针
+>
+> 多级指针
