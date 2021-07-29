@@ -1,3 +1,5 @@
+[toc]
+
 # 函数
 
 ## 一、函数的定义
@@ -221,5 +223,259 @@ int main()
 
 ## 四、函数与数组
 
+### 1. 一维数组
 
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+void print_arr(int *p,int n)//接受起始地址与元素个数
+//void print_arr(int p[],int n)　//形参中p[]等价于一个指针int*
+{
+        int i;
+        printf("%s:%d\n",__FUNCTION__,sizeof(p));//只能知道指针p占用的字节，得不
+到数组字节
+        for(i = 0;i < n;i++)
+                printf("%d ",*(p+i));
+            //  printf("%d ",p[i]);                                             
+        printf("\n");
+}
+
+int main()
+{
+
+        int a[] = {1,4,2,5,7};
+
+        printf("%s:%d\n",__FUNCTION__,sizeof(a));//查看数组字节
+        print_arr(a,sizeof(a)/sizeof(*a)); //数组传参时要传递数组的个数
+
+        exit(0);
+}
+//main:20
+print_arr:8
+1 4 2 5 7 
+    
+/*int main(int argc,char **argv)
+	int main(int argc,char *argv[])
+```
+
+```c
+int a[n] = {};		
+int *p = a;
+```
+
+| 传参 | a    | *a   | a[0] | &a[3] | p[1] | *p   | p    | p+1  |
+| ---- | ---- | ---- | ---- | ----- | ---- | ---- | ---- | ---- |
+| 接收 | int* | int  | int  | int*  | int  | int  | int* | int* |
+
+### 2.　二维数组
+
+```c
+# include<stdio.h>                                                              
+# include<stdlib.h>
+
+#define M 3
+#define N 4
+void print_arr(int *p,int n)
+{
+        int i;
+        for(i = 0;i < n;i++)
+        {
+                printf("%4d",p[i]);
+        }
+        printf("\n");
+}
+
+void print_arr1(int (*p)[N],int m,int n)
+        //      int p[][N]      形参中等价于数组指针，占８字节
+{
+
+        int i,j;
+        for(i = 0;i < m; i++)
+        {
+                for(j = 0;j < n;j++)
+                        printf("%4d",*(*(p + i)+j));
+                        //              p[i][j]
+                printf("\n");
+        }
+        printf("\n");
+}
+int main()
+{
+
+
+        int i,j;
+        int a[M][N] = {1,2,3,4,5,6,7,8,9,10,11,12};
+
+        print_arr(&a[0][0],M*N);// *a   a[0]    *(a+0)传首地址和元素个数
+        print_arr1(a,M,N);
+        exit(0);
+}
+```
+
+```c
+int a[M][N] = {...};
+int *p = *a;
+int (*q)[N] = a;
+```
+
+| 传参 | a[i] [j] | *(a+i)+j | a[i]+j | p[i] | *p   | q[i] [j] | *q   | q           | p+3  | q+2        |
+| ---- | -------- | -------- | ------ | ---- | ---- | -------- | ---- | ----------- | ---- | ---------- |
+| 接收 | int      | int*     | int*   | int  | int  | int      | int* | int (**[N]) | int* | int (*)[N] |
+
+> n维数组a，数组名a指向a[0]，a[0]是n-1维数组，数组名a[0]指向a[0][0]，a[0][0]是n-2维数组.......
+>
+> 数组名总是和 &数组名[0] 等价(值、类型)
+
+|  |         | p的类型 |
+| :----------------: | :-------: | ------- |
+|  int (*p) [Ｍ]　[N] |          &a     |     int ***     |
+|    int (*p) [N]    |     a     | int **  |
+|    int (*p) [N]    |   &a[0]   | int **  |
+|       int *p       |  a[0]/*a  | int *   |
+|       int *p       | &a[0] [0] | int *   |
+|       int p        | a[0] [0]  | int     |
+
+
+```c
+//test
+# include<stdio.h>
+# include<stdlib.h>
+
+
+int main()
+{
+
+        int a[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
+
+        int *p1 = *a;					//值均为a[0][0]地址
+        int *p2 = a[0];
+        int (*p3) [3][4] = &a;
+        int (*p4) [4] = a;
+        int (*p5) [4] = &a[0];
+
+        printf("%p %d\n",p1,sizeof(p1));				//0x7fff0a220a50	 8	
+        printf("%p %d\n",p2,sizeof(p2));
+    
+        printf("%p %d\n",p3,sizeof(p3));
+    
+        printf("%p %d\n",p4,sizeof(p4));
+        printf("%p %d\n",p5,sizeof(p5));
+        printf("\n");
+
+
+        printf("%p %d\n",p1+1,*(p1+1));			//0x7fff0a220a54  2
+        printf("%p %d\n",p2+1,*(p2+1));			//0x7fff0a220a54  2
+    
+        printf("%p %p\n",p3+1,p3);                	//0x7fff0a220a80  0x7fff0a220a50
+    
+        printf("%p %d\n",p4+1,*(*(p4+1)));			//0x7fff0a220a60  5
+        printf("%p %d\n",p5+1,*(*(p5+1)));			//0x7fff0a220a60  5
+        exit(0);
+}
+```
+
+### 3. 字符数组
+
+```c
+# include<stdio.h>
+# include<stdlib.h>
+
+char *mystrcpy(char *dest,const char *src)//返回dest的起始位置
+{
+
+        char *ret = dest;   
+        if(dest != NULL && src != NULL)
+                while((*dest++ = *src++) != '\0');
+
+        return ret;
+}
+
+int main()
+{
+
+
+        char str1[] = "beiqinb!";
+        char str2[128];
+        char *ret;
+
+        printf("%p\n",str2);
+        ret = mystrcpy(str2,str1);                                              
+        puts(str2);
+        printf("%p",ret);
+
+        exit(0);
+}
+```
+
+## 五、函数与指针
+
+### 1. 指针函数
+
+> 一个函数，返回值为指针	`int *fun(形参);`	`int *fun(int a,int b)`
+
+### 2. 函数指针
+
+> 一个指向函数的指针	`int (*P)(形参);`	`int (*P)(int ,int)`
+
+```c
+# include<stdio.h>
+# include<stdlib.h>
+
+int add(int a,int b)
+{
+        return a+b;
+}
+
+int main()
+{
+
+        int a = 1,b = 88;
+        int ret;
+        int (*p)(int,int);//形参名可省略                                        
+
+        p = add;
+        ret = p(a,b);
+        printf("%d\n",ret);
+
+        exit(0);
+}
+```
+
+### 3. 函数指针数组
+
+> 存放函数指针的数组	`int (*arr[N](形参))`	`int (*arr[N])(int)`
+
+```c
+# include<stdio.h>
+# include<stdlib.h>
+
+int add(int a,int b)
+{
+        return a+b;
+}
+
+int sub(int a,int b)
+{
+        return a-b;
+}
+int main()
+{
+
+        int a = 1,b = 88;
+        int ret,i;
+
+        int (*p[2])(int,int);
+
+
+        p[0] = add;
+        p[1] = sub;                                                             
+        for(i = 0;i < 2;i++)
+        {   
+                ret = p[i](a,b);
+                printf("%d\n",ret);
+        }
+        exit(0);
+}
+```
 

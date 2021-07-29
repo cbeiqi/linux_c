@@ -8,11 +8,13 @@
 
 ##### [二、Process Control](#Process_Control)
 
-##### [三、数组array](#数组array)
+##### [三、Array](#array)
 
-##### [四、指针point](#point)
+##### [四、Point](#point)
 
-## <span id="day1">一、day1</span>
+##### [五、function](#function)
+
+## <span id="day1">一、Day1</span>
 > 1,GCC编译器
 > 
 > 2,写程序思路
@@ -29,7 +31,7 @@
 > 
 > `if else` `switch-case` `whlie`  	`do-while`  `for` `if-goto` `break	continue`  
 
-## <span id="数组array">三、数组array</span>
+## <span id="array">三、Array</span>
 
 ### 一维数组
 
@@ -62,7 +64,7 @@
 > 常用函数
 > 
 
-## <span id="point">四、point</span>
+## <span id="point">四、Point</span>
 
 > 变量与地址 指针与变量指针 指针访问	空指针 野指针
 >
@@ -73,3 +75,9 @@
 > 指针与数组  const与指针	指针数组与数组指针
 >
 > 多级指针
+
+## <span id="function">五、Function</span>
+
+> 定义，传参，调用
+>
+> 函数与数组，函数与指针
