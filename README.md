@@ -4,7 +4,7 @@
 
 # contents 
 
-##### [一、day1](#day1)
+##### [一、Day1](#day1)
 
 ##### [二、Process Control](#Process_Control)
 
@@ -12,9 +12,9 @@
 
 ##### [四、Point](#point)
 
-##### [五、function](#function)
+##### [五、Function](#function)
 
-##### [六、构造类型](#construction)
+##### [六、Construction](#construction)
 
 ## <span id="day1">一、Day1</span>
 > 1,GCC编译器
