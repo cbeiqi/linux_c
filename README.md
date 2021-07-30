@@ -14,6 +14,8 @@
 
 ##### [五、function](#function)
 
+##### [六、构造类型](#construction)
+
 ## <span id="day1">一、Day1</span>
 > 1,GCC编译器
 > 
@@ -81,3 +83,14 @@
 > 定义，传参，调用
 >
 > 函数与数组，函数与指针
+> 
+
+
+
+## <span id="construction">六、Construction</span>
+
+> struct结构体
+>
+> union共同体
+>
+> enum枚举类型
