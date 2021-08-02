@@ -18,7 +18,7 @@
 
 #### [七、动态内存管理](#dmm)
 
-#### [八、makefile编写](#makeflie)
+#### [八、makefile编写](#makefile)
 ## <span id="day1">一、Day1</span>
 > 1,GCC编译器
 > 
