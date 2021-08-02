@@ -1,0 +1,20 @@
+OBJS=main.o tool1.o tool2.o
+CC=gcc
+CFLAGS+=-c -Wall -g
+
+mytool:$(OBJS)
+	$(CC) $^ -o $@
+
+main.o:main.c
+	$(CC) $^ $(CFLAGS) -o $@
+too1.o:tool1.c
+	$(CC) $^ $(CFLAGS) -o $@
+tool2.o:tool2.c
+	$(CC) $^ $(CFLAGS) -o $@
+
+
+clean:
+	rm -rf *.o mytool
+
+
+
