@@ -1,8 +1,6 @@
-### linux c
-### [B站-史上最强最细腻的linux嵌入式C语言学习教程【李慧芹老师】](https://www.bilibili.com/video/BV18p4y167Md)
+### linux_c基础知识
 
-
-# contents 
+# contents
 
 #### [一、Day1](#day1)
 
@@ -18,7 +16,6 @@
 
 #### [七、动态内存管理](#dmm)
 
-#### [八、makefile编写](#makeflie)
 ## <span id="day1">一、Day1</span>
 > 1,GCC编译器
 > 
@@ -104,6 +101,4 @@
 > malloc()	calloc()	realloc()	free()
 >
 > typedef
-
-## <span id="makefile">八、makefile编写</span>
 
