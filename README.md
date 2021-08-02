@@ -18,6 +18,7 @@
 
 #### [七、动态内存管理](#dmm)
 
+#### [八、makefile编写](#makeflie)
 ## <span id="day1">一、Day1</span>
 > 1,GCC编译器
 > 
@@ -98,9 +99,11 @@
 > enum枚举类型
 > 
 
-## <span id="dmm">六、动态内存管理</span>
+## <span id="dmm">七、动态内存管理</span>
 
 > malloc()	calloc()	realloc()	free()
 >
 > typedef
+
+## <span id="makefile">八、makefile编写</span>
 
