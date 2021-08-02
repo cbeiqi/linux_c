@@ -4,17 +4,19 @@
 
 # contents 
 
-##### [一、Day1](#day1)
+#### [一、Day1](#day1)
 
-##### [二、Process Control](#Process_Control)
+#### [二、Process Control](#Process_Control)
 
-##### [三、Array](#array)
+#### [三、Array](#array)
 
-##### [四、Point](#point)
+#### [四、Point](#point)
 
-##### [五、Function](#function)
+#### [五、Function](#function)
 
-##### [六、Construction](#construction)
+#### [六、Construction](#construction)
+
+#### [七、动态内存管理](#dmm)
 
 ## <span id="day1">一、Day1</span>
 > 1,GCC编译器
@@ -94,3 +96,11 @@
 > union共同体
 >
 > enum枚举类型
+> 
+
+## <span id="dmm">六、动态内存管理</span>
+
+> malloc()	calloc()	realloc()	free()
+>
+> typedef
+
